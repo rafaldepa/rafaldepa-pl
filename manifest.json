@@ -3,7 +3,7 @@
   "short_name": "Rafal Depa",
   "theme_color": "#1c1c1c",
   "background_color": "#1c1c1c",
-  "display": "browser",
+  "display": "fullscreen",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
