@@ -48,10 +48,11 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 30px;
+        padding: 30px 130px 30px 30px;
         &--dark {
             color: $light;
             background: $dark;
+            padding: 30px 30px 30px 130px;
         }
         &__content {
             text-align: center;
@@ -66,22 +67,26 @@ body {
 
     &__image {
         position: absolute;
-        width: 50%;
-        max-width: 500px;
-        bottom: -50px;
+        width: 200px;
+        height: 200px;
+        top: 50%;
         left: 50%;
-        transform: translatex(-50%);
+        transform: translate(-50%, -50%);
+        background-image: url('./../images/rafaldepa.png');
+        background-size: 95%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-color: #1c1c1c;
+        border: 3px solid #fff;
+        border-radius: 50%;
         pointer-events: none;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
         filter: grayscale(100%);
-        will-change: filter;
-        transition: .3s filter ease;
-        img {
-            display: block;
-            width: 100%;
-            margin: 0;
-        }
+        will-change: transform;
+        transition: .3s transform ease;
         &--colored {
             filter: grayscale(0);
+            transform: translate(-50%,-50%) scale(1.1);
         }
     }
 
@@ -111,18 +116,34 @@ body {
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 700px) {
     .app {
-        &__image {
-            display: none;
-        }
         &__side {
             flex: 0 0 100%;
             height: 50vh;
-            padding: 20px;
+            padding: 20px 20px 100px 20px;
+            &--dark {
+                padding: 100px 20px 20px 20px;
+            }
             &__title {
                 font-size: 3rem;
             }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .app {
+        &__side {
+            &__title {
+                font-size: 2.2rem;
+                font-weight: 500;
+            }
+        }
+        &__button {
+            height: 44px;
+            padding: 0 30px;
+            font-size: 1.5rem;
         }
     }
 }
